@@ -1,15 +1,24 @@
 {
-  "name": "dynnamoDb-partiQL-javascript",
+  "name": "dynamodb-partiql-javascript",
   "version": "1.0.0",
-  "description": "",
+  "description": "Code examples and a getting started part to follow along with blog article.",
   "main": "index.js",
   "scripts": {
+    "get-started": "node ./getting-started/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "dynamoDb",
+    "partiQL",
+    "aws",
+    "javascript"
+  ],
+  "author": "Abdullah Althawr",
   "license": "MIT",
   "dependencies": {
-    "aws-sdk": "^2.799.0"
+    "aws-sdk": "^2.842.0"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
   }
 }

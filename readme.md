@@ -11,7 +11,7 @@ In that article, I compare ways of querying and inserting data into dynamoDb usi
 1. This code uses the `us-east-1` region. If you want to use a different region, change the value in `aws-config.js`. Though, keep in mind that PartiQL support for DynamoDb is only supported in these regions at the time of writing this: US West (N. California), US West (Oregon), US East (N. Virginia), Europe (Ireland), Asia Pacific (Tokyo), and Asia Pacific (Seoul).
 1. Run `npm run get-started`. This will create a new DynamoDb table called `Movies` and upload some sample data.
 
-### Running Code samples to query uploaded data
+### Running code samples to query uploaded data
 
 The code examples for querying the data are in the folder `./query-data`.
 
@@ -30,7 +30,7 @@ node query-data/query-documentAPI.js
 
 ```
 
-### Running Code samples to insert sample data
+### Running code samples to insert sample data
 
 The code examples for inserting random movie data are in the folder `./insert-data`.
 

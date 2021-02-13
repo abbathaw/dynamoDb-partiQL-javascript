@@ -26,7 +26,7 @@ const movieDetails = {
 insertWithPartiQL(movieDetails);
 
 
-// Crude implementation of a custom JSON stringifier which uses single quotes instead of double quotes
+// Crude implementation of a custom object stringifier which uses single quotes instead of double quotes
 // Credit to the code for this from this article by Juan Dalmasso titled `Creating your own simplified implementation of JSON.stringify()`
 // https://levelup.gitconnected.com/creating-your-own-simplified-implementation-of-json-stringify-ed8e50b9144a
 function stringify(value) {

@@ -14,7 +14,7 @@ The examples here are run using node. To set up and run this example, first comp
 
 1. Download or clone this git repository.
 1. If your environment doesn't already have your AWS profile, then setup the AWS credentials by creating a `.env` file with the same keys in the `sample.env`.
-1. This code uses the `us-east-1` region. If you want to use a different region, change the value in `aws-config.js`. Though, keep in mind that PartiQL support for DynamoDb is only supported in these regions at the time of writing this: US West (N. California), US West (Oregon), US East (N. Virginia), Europe (Ireland), Asia Pacific (Tokyo), and Asia Pacific (Seoul).
+1. This code uses the `us-east-1` region. If you want to use a different region, change the value in `aws-config.js`. PartiQL support for DynamoDb is supported in at least [23 regions](https://aws.amazon.com/about-aws/whats-new/2020/12/partiql-for-dynamodb-now-is-supported-in-23-aws-regions/).
 1. Run `npm run get-started`. This will create a new DynamoDb table called `Movies` and upload some sample data.
 
 ### Running code samples to query uploaded data

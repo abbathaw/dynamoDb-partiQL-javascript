@@ -16,11 +16,11 @@ async function insertWithPartiQL(movie) {
 }
 
 const movieDetails = {
-    "year": 2020,
-    "title": `The Big New Movie: ${Math.random().toString(36).slice(-6)}`,
-    "info":{
-        "plot": "Nothing happens at all.",
-        "rating": 0
+    year: 2020,
+    title: `The Big New Movie: ${Math.random().toString(36).slice(-6)}`,
+    info:{
+        plot: "Nothing happens at all.",
+        rating: 0
     }
 }
 

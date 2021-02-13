@@ -3,22 +3,20 @@ const {createFakeMovies} = require('../utils/fake-data-generator')
 const { AWS } = require('../aws-config');
 const docClient = new AWS.DynamoDB.DocumentClient();
 
-async function uploadBatchMoviesData() {
-    const allMovies = createFakeMovies(500);
+async function uploadBatchMoviesData(listOfMovies) {
     console.time("DocumentAPI Insert Batch Duration")
     let num = 0;
-    const items = [];
-    for (const movie of allMovies) {
-        items.push({
+    const items = listOfMovies.map((movie)=> {
+        return {
             PutRequest: {
-              Item: {
-                year: movie['year'],
-                title: movie['title'],
-                info: movie['info']
-              }
-            }
-        });
-    }
+                Item: {
+                    year: movie['year'],
+                    title: movie['title'],
+                    info: movie['info']
+                }
+            }   
+        }
+    });
 
     for (let i = 0; i < items.length; i += 25) {
         const upperLimit = Math.min(i + 25, items.length);
@@ -28,10 +26,10 @@ async function uploadBatchMoviesData() {
                 'Movies': batch
             }
         };
-
+        
         try {
             const response = await docClient.batchWrite(params).promise();
-            console.log("Batch update response", response)
+            console.log("response", JSON.stringify(response,null, 4))
             num+= batch.length
             console.log(`Added a batch of ${batch.length} movies. Total movies uploaded so far ${num}.`)
         } catch(err) {
@@ -42,4 +40,5 @@ async function uploadBatchMoviesData() {
     console.timeEnd("DocumentAPI Insert Batch Duration")
 }
 
-uploadBatchMoviesData()
+const listOfMovies = createFakeMovies(49);
+uploadBatchMoviesData(listOfMovies)

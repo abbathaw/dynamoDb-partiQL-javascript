@@ -56,6 +56,25 @@ node insert-data/insert-documentAPI.js
 ```
 
 
+### Running code samples to batch insert sample data
+
+The code examples for batch inserting random movie data are in the folder `./batch-insert`.
+
+A movie list of 500 items is created user faker library.
+
+You can run the examples using the command line:
+
+```
+// To run the code example for batch inserting data using the dynamoDb partiQL api.
+
+node batch-insert/batch-partiQL.js
+
+// To run the code example for batch inserting data using the dynamoDb document client.
+
+node batch-insert/batch-documentAPI.js
+
+```
+
 
 ### (Optional) Delete the table
 

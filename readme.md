@@ -4,6 +4,12 @@ This github repo contains the code examples and a getting started part to follow
 
 In that article, I compare ways of querying and inserting data into dynamoDb using PartiQL vs using the Document API using the AWS Javascript SDK.
 
+### Prerequisite Tasks
+
+The examples here are run using node. To set up and run this example, first complete these tasks:
+1. Install Node.js. For more information, see the [Node.js website](https://nodejs.org/).
+1. Create a shared configurations file with your user credentials. For more information about providing a shared credentials file, see [Loading Credentials in Node.js from the Shared Credentials File](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/loading-node-credentials-shared.html).
+
 ### Getting Started
 
 1. Download or clone this git repository.
@@ -48,3 +54,11 @@ node insert-data/insert-partiQL.js
 node insert-data/insert-documentAPI.js
 
 ```
+
+
+
+### (Optional) Delete the table
+
+You can clean the Movies table by running
+
+`node run cleanup`

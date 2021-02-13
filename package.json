@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "get-started": "node ./getting-started/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cleanup": "node ./getting-started/cleanup.js"
   },
   "keywords": [
     "dynamoDb",
@@ -16,7 +16,8 @@
   "author": "Abdullah Althawr",
   "license": "MIT",
   "dependencies": {
-    "aws-sdk": "^2.842.0"
+    "aws-sdk": "^2.842.0",
+    "faker": "^5.4.0"
   },
   "devDependencies": {
     "dotenv": "^8.2.0"

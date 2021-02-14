@@ -16,8 +16,7 @@ async function uploadBatchWithPartiQL(listOfMovies) {
         const upperLimit = Math.min(i + 25, statements.length);
         const batch = statements.slice(i, upperLimit);
         try {
-            const response = await dynamoDB.batchExecuteStatement({Statements: batch}).promise();
-            console.log("response", JSON.stringify(response, null, 4))
+            await dynamoDB.batchExecuteStatement({Statements: batch}).promise();
             num+= batch.length
             console.log(`Added a batch of ${batch.length} movies. Total movies uploaded so far ${num}.`)
         } catch(err) {
@@ -28,5 +27,5 @@ async function uploadBatchWithPartiQL(listOfMovies) {
     console.timeEnd("PartiQL Insert Batch Duration")
 }
 
-const listOfMovies = createFakeMovies(500);
+const listOfMovies = createFakeMovies(100);
 uploadBatchWithPartiQL(listOfMovies);

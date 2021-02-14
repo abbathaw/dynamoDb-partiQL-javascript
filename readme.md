@@ -80,4 +80,4 @@ node batch-insert/batch-documentAPI.js
 
 You can clean the Movies table by running
 
-`node run cleanup`
+`npm run cleanup`

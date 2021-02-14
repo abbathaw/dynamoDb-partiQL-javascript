@@ -28,8 +28,7 @@ async function uploadBatchMoviesData(listOfMovies) {
         };
         
         try {
-            const response = await docClient.batchWrite(params).promise();
-            console.log("response", JSON.stringify(response,null, 4))
+            await docClient.batchWrite(params).promise();
             num+= batch.length
             console.log(`Added a batch of ${batch.length} movies. Total movies uploaded so far ${num}.`)
         } catch(err) {
@@ -40,5 +39,5 @@ async function uploadBatchMoviesData(listOfMovies) {
     console.timeEnd("DocumentAPI Insert Batch Duration")
 }
 
-const listOfMovies = createFakeMovies(49);
+const listOfMovies = createFakeMovies(100);
 uploadBatchMoviesData(listOfMovies)
